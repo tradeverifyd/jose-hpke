@@ -17,6 +17,5 @@ def test_integrated_encryption_decryption():
 
     message = b"hello from the other side!"
     jwe = encrypt_integrated(public_key, message)
-    print(jwe)
     plaintext = decrypt_integrated(private_key, jwe)
     assert plaintext == message
