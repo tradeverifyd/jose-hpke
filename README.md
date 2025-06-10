@@ -6,6 +6,8 @@ This implementation is based on the [hybrid-pke](https://github.com/capeprivacy/
 
 Only a subset of the JWE is implemented, and only the HPKE-0 algorithm is supported.
 
+⚠️ This implementation is not yet ready for production use.
+
 ## Usage
 
 ```python
