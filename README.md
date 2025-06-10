@@ -1,5 +1,7 @@
 # jose-hpke
 
+[![Python Tests](https://github.com/tradeverifyd/jose-hpke/actions/workflows/ci.yaml/badge.svg)](https://github.com/tradeverifyd/jose-hpke/actions/workflows/ci.yaml)
+
 This is a Python implementation of the [draft-ietf-jose-hpke-encrypt-08](https://datatracker.ietf.org/doc/html/draft-ietf-jose-hpke-encrypt-08) specification.
 
 This implementation is based on the [hybrid-pke](https://github.com/capeprivacy/hybrid-pke) library.
