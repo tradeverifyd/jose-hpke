@@ -20,3 +20,5 @@ jobs:
         run: uv lock
       - name: Run Tests
         run: uv run pytest
+        env:
+          PYO3_USE_ABI3_FORWARD_COMPATIBILITY: 1
