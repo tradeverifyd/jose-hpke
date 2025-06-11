@@ -12,22 +12,7 @@ Only a subset of the JWE is implemented, and only the HPKE-0 algorithm is suppor
 
 ## Usage
 
-```python
-from hpke.jwk import generate_key
-from hpke.jwe import encrypt_integrated, decrypt_integrated
-
-key = generate_key()
-public_key = export_public_key(key)
-# {"kty":"EC","crv":"P-256","alg": "HPKE-0","x":"...","y":"..."}
-private_key = export_private_key(key)
-# {"kty":"EC","crv":"P-256","alg": "HPKE-0","x":"...","y":"...","d":"..."}
-
-jwe = encrypt_integrated(public_key, b"Hello world!")
-# eyJhbGciOiAiSFBLRS0wIiwgImVuZCI6ICJpbnQiLCAia2lkIjogIlRWU1MzNzFWUjhiVEJkUUJya01fMmtONnM3ZFBGUnZROTREa2ZSbmlLeFUifQ.BO1RFLhRhrtHILUVvi8iSswMbaO6Wi8xYFs2K-5TPi7MTK80C_viaMxYNRK2kC8x69Uh34XQ4hVjcyonvTtRtmY..pNB47pv2AHkHgIRHrxtrigG7dzKrKmrHc9-a_KjuvOzat1y4XW4GPbRP.
-
-plaintext = decrypt_integrated(private_key, jwe)
-print(plaintext) # b"Hello world!"
-```
+See [docs/usage.md](docs/usage.md) for usage examples.
 
 ## Credits
 

@@ -2,15 +2,9 @@
 # pylint: disable=all
 # mypy: ignore-errors
 
+import os
 from hpke.jwk import generate_key, export_public_key, export_private_key
 from hpke.jwe import encrypt_integrated, decrypt_integrated, encrypt_key_encryption, decrypt_key_encryption
-
-
-def line_wrap_for_rfc(text: str) -> str:
-    """
-    Line wrap the given text for RFC compliance.
-    """
-    return "\n".join(text.split("\n"))
 
 def test_make_markdown_examples():
     """
@@ -30,21 +24,36 @@ def test_make_markdown_examples():
     assert plaintext == message
 
     markdown = f"""
-# Private Key
-```json
-{private_key}
+# Key Generation
+
+```python
+key = generate_key()
+public_key = export_public_key(key)
+# {public_key}
+
+private_key = export_private_key(key)
+# {private_key}
+
+message = "hello 🌎".encode(encoding='utf-8')
 ```
 
 # Compact JWE
+
 ```python
-{compact_jwe}
+message = "hello 🌎".encode(encoding='utf-8')
+compact_jwe = encrypt_integrated(public_key, message)
+# {compact_jwe}
 ```
 
 # JSON JWE
+
 ```python
-{json_jwe}
+json_jwe = encrypt_key_encryption(public_key, message)
+# {json_jwe}
 ```
     """.strip()
-    print(markdown)
+
+    # with open("docs/usage.md", "w") as f:
+    #     f.write(markdown)
 
 
