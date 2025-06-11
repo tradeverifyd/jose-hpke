@@ -9,6 +9,7 @@ description = "A Python implementation of the draft-ietf-jose-hpke-encrypt-08 sp
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "cryptography>=45.0.4",
     "hybrid-pke>=1.0.2",
     "pydantic>=2.11.5",
     "pytest>=8.4.0",
